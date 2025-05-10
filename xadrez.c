@@ -14,7 +14,7 @@ void movimentos_mestre();
 void moverTorreRecursivo(int casas);
 void moverBispoAvancado(int casas);
 void moverRainhaRecursivo(int casas);
-void moverCavaloComComplexo();  //cavalo que só fala inglês
+void moverCavaloComplexo();  
 
 int main(){
     int opcao;
@@ -45,7 +45,7 @@ void movimentos_mestre(){
     moverTorreRecursivo(5);
     moverBispoAvancado(5);
     moverRainhaRecursivo(8);
-    moverCavaloComComplexo();
+    moverCavaloComplexo();
 }
 // implementação novato
 void moverTorre(){
@@ -110,7 +110,7 @@ void moverRainhaRecursivo(int casas ){
     //chamada recursiva 
     moverRainhaRecursivo(casas -1);
 }
-void moverCavaloComComplexo(){
+void moverCavaloComplexo(){
     printf("\ncavalo complexo: 2 cima e 1 direita(controle avançado):\n");
     int mov_vertical =0;
     int mov_horizontal=0;
