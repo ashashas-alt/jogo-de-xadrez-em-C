@@ -14,15 +14,15 @@ void movimentos_mestre();
 void moverTorreRecursivo(int casas);
 void moverBispoAvancado(int casas);
 void moverRainhaRecursivo(int casas);
-void moverCavaloComplexo();
+void moverCavaloComComplexo();  //cavalo que só fala inglês
 
 int main(){
     int opcao;
 
-    printf(" \n");
-    printf(" \n");
-    printf(" \n");
-    printf(" \n");
+    printf("xadrez - escolha o novel:\n");
+    printf("1- nivel novato (loops basicos)\n");
+    printf("2- nivel mestre (recursao e loops complexos) \n");
+    printf("digite sua escolha: ");
     scanf("%d", &opcao);
 
     if(opcao == 1){
@@ -45,7 +45,7 @@ void movimentos_mestre(){
     moverTorreRecursivo(5);
     moverBispoAvancado(5);
     moverRainhaRecursivo(8);
-    moverCavaloComplexo();
+    moverCavaloComComplexo();
 }
 // implementação novato
 void moverTorre(){
@@ -79,7 +79,7 @@ void moverCavalo(){
     //horizontal L 
     int j=0;
     while(j<1){
-        print("esquerda\n");
+        printf("esquerda\n");
         j++;
     }
 }
@@ -95,11 +95,37 @@ void moverTorreRecursivo(int casas){
 void moverBispoAvancado(int casas){
     printf("\nBispo Avançado: %d casas na diagonal (loops aninhados):\n", casas);
     //loop externo para controle do movimento
-    for (int v = 0; v< casas: v++){
+    for (int v = 0; v< casas; v++){
         //loop interno para passo diagonal
-        for(int h=0;h<1;h++){
-            
+        for(int h=0;h<1;h++){  
+            printf("cima, direita\n"); 
         }
     } 
+}
+void moverRainhaRecursivo(int casas ){
+    //caso base 
+    if(casas <=0)return;
+
+    printf("esquerda\n");
+    //chamada recursiva 
+    moverRainhaRecursivo(casas -1);
+}
+void moverCavaloComComplexo(){
+    printf("\ncavalo complexo: 2 cima e 1 direita(controle avançado):\n");
+    int mov_vertical =0;
+    int mov_horizontal=0;
+
+    //enquanto nao completar os movimentos 
+    while (mov_vertical<2 || mov_horizontal<1){
+        //completar movimentos verticais primeiro 
+        if(mov_vertical<2){
+            printf("cima\n");
+            mov_vertical++;
+            continue; //volta inicio do loop
+        }
+        if (mov_horizontal<1){
+            printf("direita\n");
+            mov_horizontal++;
+        }
     }
 }
